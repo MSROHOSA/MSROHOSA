@@ -1,0 +1,50 @@
+class AbortionApp:
+    def __init__(self):
+        self.menu = {
+            1: "What is abortion?",
+            2: "Abortion laws and regulations",
+            3: "Types of abortion procedures",
+            4: "Abortion risks and side effects",
+            5: "Find abortion clinics near you",
+            6: "Support resources for individuals considering abortion",
+            7: "Exit"
+        }
+
+    def display_menu(self):
+        print("\nWelcome to the Abortion Information App\n")
+        for key, value in self.menu.items():
+            print(f"{key}. {value}")
+    
+    def get_user_choice(self):
+        choice = input("\nEnter the number of your choice: ")
+        return int(choice)
+    
+    def display_information(self, choice):
+        if choice == 1:
+            print("\nAbortion is the termination of pregnancy by the removal or expulsion of a fetus.")
+        elif choice == 2:
+            print("\nAbortion laws and regulations vary by country and region. It's important to understand the laws in your area.")
+        elif choice == 3:
+            print("\nThere are different types of abortion procedures, including medical abortion (using medication) and surgical abortion (using procedures like aspiration or dilation and evacuation).")
+        elif choice == 4:
+            print("\nLike any medical procedure, abortion carries some risks and potential side effects. It's important to discuss these with a healthcare provider.")
+        elif choice == 5:
+            print("\nYou can find abortion clinics near you by searching online or using resources like Planned Parenthood.")
+        elif choice == 6:
+            print("\nThere are many support resources available for individuals considering abortion, including counseling services and support hotlines.")
+        elif choice == 7:
+            print("\nThank you for using the Abortion Information App. Goodbye!")
+            exit()
+        else:
+            print("\nInvalid choice. Please enter a number from the menu.")
+    
+    def run(self):
+        while True:
+            self.display_menu()
+            choice = self.get_user_choice()
+            self.display_information(choice)
+
+
+if __name__ == "__main__":
+    app = AbortionApp()
+    app.run()
